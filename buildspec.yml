@@ -9,6 +9,9 @@ env:
 phases:
   pre_build:
     commands:
+      - cat /codebuild/output/tmp/script.sh
+      - apt install tree
+      - tree /codebuild/
       - printenv
       - echo Displaying AWS_DEFAULT_REGION
       - echo $AWS_DEFAULT_REGION
