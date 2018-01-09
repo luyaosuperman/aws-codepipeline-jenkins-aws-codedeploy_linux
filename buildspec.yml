@@ -1,6 +1,14 @@
 version: 0.1
 
 phases:
+  pre_build:
+    commands:
+      - printenv
+      - echo Displaying AWS_DEFAULT_REGION
+      - echo $AWS_DEFAULT_REGION
+      - echo Logging in to Amazon ECR...
+      - $(aws --version)
+      - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
   install:
     commands:
       - printenv
