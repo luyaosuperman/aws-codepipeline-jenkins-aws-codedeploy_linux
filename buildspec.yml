@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - printenv
-      - gem install haml
+      #- gem install haml
       - echo Displaying AWS_DEFAULT_REGION
       - echo $AWS_DEFAULT_REGION
       - echo Logging in to Amazon ECR...
