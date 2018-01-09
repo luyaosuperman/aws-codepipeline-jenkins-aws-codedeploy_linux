@@ -1,5 +1,11 @@
 version: 0.1
 
+env:
+  variables:
+    REPOSITORY_URI: "470661407635.dkr.ecr.us-east-1.amazonaws.com/torchevere-ecr-east"
+  parameter-store:
+    GITHUB_SSH_PRIVATE_KEY: "GITHUB_SSH_PRIVATE_KEY"
+
 phases:
   pre_build:
     commands:
