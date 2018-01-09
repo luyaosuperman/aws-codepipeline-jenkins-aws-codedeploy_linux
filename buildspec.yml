@@ -5,6 +5,11 @@ phases:
     commands:
       - printenv
       - gem install haml
+      - echo Displaying AWS_DEFAULT_REGION
+      - echo $AWS_DEFAULT_REGION
+      - echo Logging in to Amazon ECR...
+      - $(aws --version)
+      - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
   build:
     commands:
       - echo Build completed on `date`
