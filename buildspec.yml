@@ -10,7 +10,7 @@ phases:
   pre_build:
     commands:
       - cat /codebuild/output/tmp/script.sh
-      - apt install tree -y
+      #- apt install tree -y
       - tree /codebuild/
       - printenv
       - echo Displaying AWS_DEFAULT_REGION
