@@ -7,14 +7,24 @@ env:
     GITHUB_SSH_PRIVATE_KEY: "GITHUB_SSH_PRIVATE_KEY"
 
 phases:
-  pre_build:
+  install:
     commands:
+      - printenv
       - cat /codebuild/output/tmp/script.sh
       - cat /codebuild/output/tmp/env.sh
-      - apt update 
+      - apt update
       - apt install tree -y
       - tree /codebuild/
       - printenv
+
+  pre_build:
+    commands:
+      #- cat /codebuild/output/tmp/script.sh
+      #- cat /codebuild/output/tmp/env.sh
+      #- apt update 
+      #- apt install tree -y
+      #- tree /codebuild/
+      #- printenv
       - echo Displaying AWS_DEFAULT_REGION
       - echo $AWS_DEFAULT_REGION
       - echo Logging in to Amazon ECR...
